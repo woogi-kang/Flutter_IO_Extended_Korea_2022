@@ -17,7 +17,7 @@ class _CategoryDetailState extends State<CategoryDetail> {
   void initState() {
     super.initState();
 
-    Future.microtask(() async => await fetchData());
+    WidgetsBinding.instance.addPostFrameCallback((_) async => await fetchData());
   }
 
   Future<void> fetchData() async {

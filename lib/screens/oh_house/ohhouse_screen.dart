@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_io_extended_korea_2022/enums/category_after.dart';
 import 'package:flutter_io_extended_korea_2022/screens/oh_house/category_detail.dart';
+
 // import 'package:flutter_io_extended_korea_2022/enums/category_before.dart';
 import 'package:get/get.dart';
 
@@ -60,11 +61,10 @@ class _OhHouseScreenState extends State<OhHouseScreen> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
           decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.lightBlue,
-              ),
-              borderRadius: BorderRadius.circular(5),
-              color: Colors.white),
+            border: Border.all(color: Colors.lightBlue),
+            borderRadius: BorderRadius.circular(5),
+            color: Colors.white,
+          ),
           child: const Text(
             '카테고리 전체 >',
             style: TextStyle(
