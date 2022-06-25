@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_io_extended_korea_2022/screens/home.dart';
-import 'package:flutter_io_extended_korea_2022/screens/ohhouse_screen.dart';
+import 'package:flutter_io_extended_korea_2022/screens/oh_house/ohhouse_screen.dart';
 import 'package:get/get.dart';
 
 void main() {

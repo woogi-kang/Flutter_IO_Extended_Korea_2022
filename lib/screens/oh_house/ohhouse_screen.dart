@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_io_extended_korea_2022/enums/category_after.dart';
-import 'package:flutter_io_extended_korea_2022/enums/category_before.dart';
+import 'package:flutter_io_extended_korea_2022/screens/oh_house/category_detail.dart';
+// import 'package:flutter_io_extended_korea_2022/enums/category_before.dart';
 import 'package:get/get.dart';
 
 class OhHouseScreen extends StatefulWidget {
@@ -77,37 +78,42 @@ class _OhHouseScreenState extends State<OhHouseScreen> {
   }
 
   Widget _buildItem(Category category) {
-    return Container(
-      padding: const EdgeInsets.all(3),
-      color: Colors.grey[200],
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // 카테고리의 Image Widget
-          category.image,
-          const SizedBox(height: 5),
-          Row(
-            children: [
-              // 카테고리 ID
-              Text(
-                '${category.categoryId}',
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
+    return GestureDetector(
+      // 카테고리 상세페이지로 이동
+      onTap: () => Get.to(() => CategoryDetail(category: category)),
+      child: Container(
+        padding: const EdgeInsets.all(3),
+        color: Colors.grey[200],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // 카테고리의 Image Widget
+            category.image,
+            const SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // 카테고리 ID`
+                Text(
+                  '${category.id}.',
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
 
-              // 카테고리 이름
-              Text(
-                category.categoryName,
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
+                // 카테고리 이름
+                Text(
+                  category.name,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,38 +1,40 @@
 import 'package:flutter/material.dart';
 
 enum Category {
-  furniture(0, '가구'),
-  fabric(1, '패브릭'),
-  electronics(2, '가전'),
-  kids(3, '유아·아동'),
-  lights(4, '조명'),
-  kitchen(5, '주방용품'),
-  decoration(6, '데코·식물'),
-  storage(7, '수납·정리'),
-  supplies(8, '생활용품'),
-  necessity(9, '생필품'),
-  diy(10, '공구·DIY'),
-  interior(11, '인테리어시공'),
-  pet(12, '반려동물'),
-  camping(13, '캠핑용품'),
-  fitness(14, '실내운동'),
-  rental(15, '렌탈');
+  furniture(1, '가구', Colors.red),
+  fabric(2, '패브릭', Colors.orange),
+  electronics(3, '가전', Colors.yellow),
+  kids(4, '유아·아동', Colors.green),
+  lights(5, '조명', Colors.blue),
+  kitchen(6, '주방용품', Colors.grey),
+  decoration(7, '데코·식물', Colors.purple),
+  storage(8, '수납·정리', Colors.cyanAccent),
+  supplies(9, '생활용품', Colors.deepPurpleAccent),
+  necessity(10, '생필품', Colors.tealAccent),
+  diy(11, '공구·DIY', Colors.purpleAccent),
+  interior(12, '인테리어시공', Colors.yellowAccent),
+  pet(13, '반려동물', Colors.greenAccent),
+  camping(14, '캠핑용품', Colors.blueAccent),
+  fitness(15, '실내운동', Colors.redAccent),
+  rental(16, '렌탈', Colors.pink);
 
   /// 카테고리 ID
-  final int categoryId;
+  final int id;
   /// 카테고리 이름
-  final String categoryName;
+  final String name;
+  /// 카테고리 색상
+  final Color color;
 
-  const Category(this.categoryId, this.categoryName);
+  const Category(this.id, this.name, this.color);
 
   /// 이미지 경로
-  String get imageUrl => 'assets/images/$categoryName.webp';
+  String get imageUrl => 'assets/images/$name.webp';
 
   /// 이미지 위젯
   Widget get image => Image.asset(imageUrl);
 
   @override
   String toString() {
-    return categoryName;
+    return '내가 선택한 카테고리는\n$name 입니다.';
   }
 }
