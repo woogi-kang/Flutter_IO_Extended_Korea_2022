@@ -1,17 +1,6 @@
-# flutter_io_extended_korea_2022
+# Flutter_I/O_Extended_Korea_2022
 
-A new Flutter project.
+FLutter I/O Extended Korea 2022 행사에서
+Dart 2.17 변경점과 Enum 실프로젝트 적용에 대한 강연 자료 입니다.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# Flutter_IO_Extended_Korea_2022" 
+Flutter-I_O-Extended-Korea-2022.pptx -> 강연 PPT 자료
