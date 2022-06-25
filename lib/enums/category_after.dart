@@ -14,18 +14,25 @@ enum Category {
   diy(10, '공구·DIY'),
   interior(11, '인테리어시공'),
   pet(12, '반려동물'),
-  camping(13, '갬핑용품'),
+  camping(13, '캠핑용품'),
   fitness(14, '실내운동'),
   rental(15, '렌탈');
 
   /// 카테고리 ID
-  final int categoryId = 0;
+  final int categoryId;
   /// 카테고리 이름
-  final String name = '';
+  final String categoryName;
 
-  const Category(categoryId, name);
+  const Category(this.categoryId, this.categoryName);
 
-  String get imageUrl => 'assets/name.webp';
+  /// 이미지 경로
+  String get imageUrl => 'assets/images/$categoryName.webp';
 
+  /// 이미지 위젯
   Widget get image => Image.asset(imageUrl);
+
+  @override
+  String toString() {
+    return categoryName;
+  }
 }
