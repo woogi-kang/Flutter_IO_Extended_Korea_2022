@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_io_extended_korea_2022/enums/category_after.dart';
 import 'package:flutter_io_extended_korea_2022/screens/oh_house/category_detail.dart';
 
-// import 'package:flutter_io_extended_korea_2022/enums/category_before.dart';
 import 'package:get/get.dart';
 
 class OhHouseScreen extends StatefulWidget {

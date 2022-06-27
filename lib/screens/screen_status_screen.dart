@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_io_extended_korea_2022/enums/screen_status.dart';
 
+/// Screen Status 예제
 class ScreenStatusScreen extends StatefulWidget {
   const ScreenStatusScreen({Key? key}) : super(key: key);
 
@@ -9,16 +10,11 @@ class ScreenStatusScreen extends StatefulWidget {
 }
 
 class _ScreenStatusScreenState extends State<ScreenStatusScreen> {
+
   ScreenStatus screenStatus = ScreenStatus.normal;
 
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async => await fetchData());
-  }
-
   /// 데이터 가져오기
-  Future<void> fetchData() async {
+  void fetchData(ScreenStatus status) async {
     setState(() {
       screenStatus = ScreenStatus.loading;
     });
@@ -27,9 +23,7 @@ class _ScreenStatusScreenState extends State<ScreenStatusScreen> {
     await Future.delayed(const Duration(seconds: 2));
 
     setState(() {
-      // screenStatus = ScreenStatus.success;
-      // screenStatus = ScreenStatus.error;
-      screenStatus = ScreenStatus.empty;
+      screenStatus = status;
     });
   }
 
@@ -56,9 +50,23 @@ class _ScreenStatusScreenState extends State<ScreenStatusScreen> {
 
             TextButton(
               onPressed: () {
-                fetchData();
+                fetchData(ScreenStatus.success);
               },
-              child: const Text('데이터 가져오기'),
+              child: const Text('Success'),
+            ),
+
+            TextButton(
+              onPressed: () {
+                fetchData(ScreenStatus.error);
+              },
+              child: const Text('Error'),
+            ),
+
+            TextButton(
+              onPressed: () {
+                fetchData(ScreenStatus.empty);
+              },
+              child: const Text('Empty`'),
             ),
           ],
         ),
